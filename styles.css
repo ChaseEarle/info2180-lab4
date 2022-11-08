@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(232, 231, 231);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.heading{
+    color: white;
+    background-color: #5b93e1;
+    padding: 10px;
+}
+
+h1{
+    text-align: center;
+    font-size: 39px;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.section{
+    padding: 3% 0% 0% 23% ;
+}
+
+#searchBox{
+    position: relative;
+    width: 60%;  
+}
+
+.section input[type=text]{
+    padding: 13px;
+    margin-top: 8px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0px 1px #979696;
+}
+
+.section button{
+    padding: 10px 11px 12px 11px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: rgb(190, 70, 70);
+    font-size: 17px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0px 1px #979696;
+}
+
+h2{
+    font-size: 30px;
+    font-weight:800;
+    margin-top: 5%;
+}
+
+.section hr{
+    height: 2px;
+    border-width: 1px;
+    margin-right: 20%;
+    background-color: #d2d0d0;
+}

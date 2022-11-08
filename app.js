@@ -1,31 +1,27 @@
-/**$(document).ready(function() {
-  var searchBtn = $('#searchbtn');
-  var lst = $('#results');
-  
+window.addEventListener('load', ()=>{
 
-  searchBtn.on('click', function() {
-    $.ajax('superheroes.php', {
-      method: 'GET'
-    }).done(function(response) {
-      alert(response);
-    }).fail(function() {
-      alert('There was a problem with the request.');
-    });
-  });
-}); */
-window.addEventListener('load',()=>{
- var btn=document.getElementById("searchbtn");
- var url='superheroes.php';
+ 
+  let parserTool = new DOMParser();
 
- btn.addEventListener("click",()=>{
-  fetch(url,{
-    method:'GET',
-    headers:{
-      'Conent-Type': "application/json",
-    },
-  })
-  .then(response => response.text())
-  .then(text =>alert(text))
-  .catch((error =>(console.log("error"))))
- })
-})
+  document.querySelector("button#btn").addEventListener("click", (event)=>{
+      event.preventDefault();
+      let searchVal = document.querySelector("input#searchField").value.replace(/[-&\/\\#,+()$@|~%!.'":;*?<>{}]/g,'');
+      let resultDiv = document.querySelector("div#result");
+    
+      let cleanUrl = `superheroes.php?query= ${searchVal}`.replace( /"[^-0-9+&@#/%?=~_|!:,.;\(\)]"/g,'');
+
+      fetch(cleanUrl, {method : 'GET'})
+      .then(resp => resp.text())
+      .then(elements => {
+          let El1 = document.createElement("h3");
+          let EL1txt = document.createTextNode("RESULT");
+          El1.appendChild(EL1txt);
+          let EL2= document.createElement("hr");
+          resultDiv.innerHTML = '';
+          resultDiv.innerHTML = elements;
+          resultDiv.prepend(El1, EL2);
+          
+      })
+ });
+
+});
